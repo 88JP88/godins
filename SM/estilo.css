@@ -27,12 +27,5 @@
     padding-top: 5%;
   }
 
-  .row{
-    width: 100%;
-    background-color: #ffffff;
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    grid-template-rows: repeat(8, 200px);
-    grid-gap: 15px;
-  }
+
   
