@@ -2002,15 +2002,7 @@ $resolveSLCF=0;
     
 
 
-        echo    '<table div class="container text-center">
-        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4">
-          <div class="col">Column</div>
-          <div class="col">Column</div>
-          <div class="col">Column</div>
-          <div class="col">Column</div>
-        </div>
-      </div>
-      /<table>';
+       
       echo "<H2>SPRINT ACTUAL</H2>";
 
 //grilla----
@@ -2045,7 +2037,7 @@ $resolveSLCF=0;
         <tr style="border: 1px solid #000;">
             <td style="background-color: #e6bb67; border: 1px solid #000;">High</td>
             <td>' . $horasHP . '</td>
-            <td style="border: 1px solid #000;">' . ($diasHP / $totalTicketsHigh) . '</td>
+            <td style="border: 1px solid #000;">' . (($totalTicketsHigh !== 0) ?  ($diasHP / $totalTicketsHigh)  : 0) . '</td>
             <td>' . $totalTicketsHigh . '</td>
             <td style="border: 1px solid #000;"><b>' . $Hresolve . '</b> -> (' . $porcentajetotalH . '%)</td>
           
@@ -2060,7 +2052,7 @@ $resolveSLCF=0;
         <tr style="border: 1px solid #000;">
             <td style="background-color: #e6bb67; border: 1px solid #000;">Medium</td>
             <td>' . $horasM . '</td>
-            <td style="border: 1px solid #000;">' . ($diasM / $totalTicketsMedium) . '</td>
+            <td style="border: 1px solid #000;">' . (($totalTicketsMedium !== 0) ?  ($diasM / $totalTicketsMedium)  : 0) . '</td>
             <td>' . $totalTicketsMedium . '</td>
             <td style="border: 1px solid #000;"><b>' . $Mresolve . '</b> -> (' . $porcentajetotalM . '%)</td>
             
@@ -2075,7 +2067,7 @@ $resolveSLCF=0;
         <tr style="border: 1px solid #000;">
             <td style="background-color: #e6bb67; border: 1px solid #000;">Low</td>
             <td>' . $horasL . '</td>
-            <td style="border: 1px solid #000;">' . ($diasL / $totalTicketsLow) . '</td>
+            <td style="border: 1px solid #000;">' .  (($totalTicketsMedium !== 0) ? ($diasL / $totalTicketsLow) : 0)  . '</td>
             <td>' . $totalTicketsLow . '</td>
             <td style="border: 1px solid #000;"><b>' . $Lresolve . '</b> -> (' . $porcentajetotalL . '%)</td>
             
@@ -2106,7 +2098,7 @@ $resolveSLCF=0;
         <tr style="border: 1px solid #000;">
         <td style="background-color: #3e5cc6; border: 1px solid #000;"><h3>Total</h3></td>
         <td>' . $sumatoriahoras . '</td>
-        <td style="border: 1px solid #000;">' . ($sumatoriadias / $sumatoria) . '</td>
+        <td style="border: 1px solid #000;">' . (($sumatoria !== 0) ? ($sumatoriadias / $sumatoria) : 0) . '</td>
         <td><h3><b>' . $sumatoria . '</b></h3></td>
         <td style="border: 1px solid #000;"><b>' . $sumatoriaresolve . '</b> -> (' . $porcentajetotal . '%)</td>
      
@@ -3630,7 +3622,7 @@ foreach ($csvRows as $row) {
         $dateFinal2 = new DateTime($fechaFinalparam);
         $dateInicios = new DateTime($fechaInicioparams);
         
-        if ($dateInicio<=$dateFinal2) {
+        if ($dateInicio<=$dateFinal1) {
             
                    
 //verifica estado para calculo por fecha y hora
@@ -4540,7 +4532,7 @@ if($estado=="Resuelta"){
             <tr style="border: 1px solid #000;">
                 <td style="background-color: #e6bb67; border: 1px solid  #000;">Low</td>
                 <td>' . $horasL . '</td>
-                <td style="border: 1px solid #000;">' . ($diasL / $totalTicketsLow) . '</td>
+                <td style="border: 1px solid #000;">' .(($totalTicketsLow !== 0) ?   ($diasL / $totalTicketsLow)  : 0) . '</td>
                 <td>' . $totalTicketsLow . '</td>
                 <td style="border: 1px solid #000;"><b>' . $Lresolve . '</b> -> (' . $porcentajetotalL . '%)</td>
                 
