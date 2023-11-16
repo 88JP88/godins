@@ -17,6 +17,11 @@
     crossorigin="anonymous"></script>
   <!--Stilos CSS-->
   <link rel="stylesheet" href="estilo.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cabin&family=Glass+Antiqua&family=Merriweather:wght@300&family=Noto+Sans+TC:wght@100&display=swap" rel="stylesheet">
+
 <html>
 <head>
 <nav class="navbar navbar-expand-lg navbar-light navbar-dark">
@@ -66,8 +71,7 @@
     <label>Fecha final:</label>
     <input type="datetime-local" name="fechaFinal" required>
 
-    <label>Fecha final:</label>
-    <input type="datetime-local" name="fechaInicioS" required>
+    
   </div>
   <div class="col-12">
   
@@ -2005,10 +2009,10 @@ $resolveSLCF=0;
         </div>
       </div>
       /<table>';
-      echo "<H3><b>SPRINT ACTUAL</b></H3>";
+      echo "<H2>SPRINT ACTUAL</H2>";
 
 //grilla----
-    echo '<table style="background-color: #3b5ac6; color: #000; border-collapse: collapse; border: 1px solid #000;" div class="container text-center">
+    echo '<table border-collapse: collapse; border: 1px solid #000;" div class="container text-center">
     <tr>
     <th style="border: 1px solid #000;"> Prioridad </th>
     <th style="border: 1px solid #000;">Horas totales</th>
@@ -2022,8 +2026,8 @@ $resolveSLCF=0;
     <th style="border: 1px solid #000;">Testeando</th>
     <th style="border: 1px solid #000;">Escalado</th>
 </tr>
-        <tr style="border: 1px solid #000;">
-            <td style="border: 1px solid #000;">Highest</td>
+        <tr style="border: 1px solid #000;"> 
+            <td style="background-color: #e6bb67; border: 1px solid  #000;">Highest</td>
             <td>' . $horasSHP . '</td>
             <td style="border: 1px solid #000;">' . (($totalTicketsSuperHigh !== 0) ? ($diasSHP / $totalTicketsSuperHigh) : 0) . '</td>
             <td>' . $totalTicketsSuperHigh . '</td>
@@ -2037,7 +2041,7 @@ $resolveSLCF=0;
             <td style="border: 1px solid #000;">' . $SHsc . '</td>
         </tr>
         <tr style="border: 1px solid #000;">
-            <td style="border: 1px solid #000;">High</td>
+            <td style="background-color: #e6bb67; border: 1px solid #000;">High</td>
             <td>' . $horasHP . '</td>
             <td style="border: 1px solid #000;">' . ($diasHP / $totalTicketsHigh) . '</td>
             <td>' . $totalTicketsHigh . '</td>
@@ -2052,7 +2056,7 @@ $resolveSLCF=0;
             <td style="border: 1px solid #000;">' . $Hsc . '</td>
         </tr>
         <tr style="border: 1px solid #000;">
-            <td style="border: 1px solid #000;">Medium</td>
+            <td style="background-color: #e6bb67; border: 1px solid #000;">Medium</td>
             <td>' . $horasM . '</td>
             <td style="border: 1px solid #000;">' . ($diasM / $totalTicketsMedium) . '</td>
             <td>' . $totalTicketsMedium . '</td>
@@ -2067,7 +2071,7 @@ $resolveSLCF=0;
             <td style="border: 1px solid #000;">' . $Msc . '</td>
         </tr>
         <tr style="border: 1px solid #000;">
-            <td style="border: 1px solid #000;">Low</td>
+            <td style="background-color: #e6bb67; border: 1px solid #000;">Low</td>
             <td>' . $horasL . '</td>
             <td style="border: 1px solid #000;">' . ($diasL / $totalTicketsLow) . '</td>
             <td>' . $totalTicketsLow . '</td>
@@ -2082,7 +2086,7 @@ $resolveSLCF=0;
             <td style="border: 1px solid #000;">' . $Lsc . '</td>
         </tr>
         <tr style="border: 1px solid #000;">
-            <td style="border: 1px solid #000;">Lowest</td>
+            <td style="background-color: #e6bb67; border: 1px solid #000;">Lowest</td>
             <td>' . $horasSL . '</td>
             <td style="border: 1px solid #000;">' . (($totalTicketsSuperLow !== 0) ? ($diasSL / $totalTicketsSuperLow) : 0) . '</td>
 
@@ -2098,7 +2102,7 @@ $resolveSLCF=0;
             <td style="border: 1px solid #000;">' . $SLsc . '</td>
         </tr>
         <tr style="border: 1px solid #000;">
-        <td style="border: 1px solid #000;"><h3>Total</h3></td>
+        <td style="background-color: #3e5cc6; border: 1px solid #000;"><h3>Total</h3></td>
         <td>' . $sumatoriahoras . '</td>
         <td style="border: 1px solid #000;">' . ($sumatoriadias / $sumatoria) . '</td>
         <td><h3><b>' . $sumatoria . '</b></h3></td>
@@ -2158,7 +2162,7 @@ $resolveSLCF=0;
     $porcentajetotalTestingps = ($sumatoriaps != 0) ? ($totalTestingps / $sumatoriaps) * 100 : 0;
     
 
-echo "<H3><b>SPRINT ANTERIOR</b></H3>";
+echo "<H2>SPRINT ANTERIOR</H2>";
 
 
     echo '<table style="background-color: #3b5ac6; color: #000; border-collapse: collapse; border: 1px solid #000;"  div class="container text-center">
@@ -2176,7 +2180,7 @@ echo "<H3><b>SPRINT ANTERIOR</b></H3>";
     <th style="border: 1px solid #000;">Escalado</th>
 </tr>
         <tr style="border: 1px solid #000;">
-            <td style="border: 1px solid #000;">Highest</td>
+            <td style="background-color: #e6bb67; border: 1px solid  #000;">Highest</td>
             <td>' . $horasSHPps . '</td>
             <td style="border: 1px solid #000;">' . (($totalTicketsSuperHighps !== 0) ? ($diasSHPps / $totalTicketsSuperHighps) : 0)  . '</td>
             <td>' . $totalTicketsSuperHighps . '</td>
@@ -2190,7 +2194,7 @@ echo "<H3><b>SPRINT ANTERIOR</b></H3>";
             <td style="border: 1px solid #000;">' . $SHscps . '</td>
         </tr>
         <tr style="border: 1px solid #000;">
-            <td style="border: 1px solid #000;">High</td>
+            <td style="background-color: #e6bb67; border: 1px solid  #000;">High</td>
             <td>' . $horasHPps . '</td>
             <td style="border: 1px solid #000;">' . ($diasHPps / $totalTicketsHighps) . '</td>
             <td>' . $totalTicketsHighps . '</td>
@@ -2205,7 +2209,7 @@ echo "<H3><b>SPRINT ANTERIOR</b></H3>";
             <td style="border: 1px solid #000;">' . $Hscps . '</td>
         </tr>
         <tr style="border: 1px solid #000;">
-            <td style="border: 1px solid #000;">Medium</td>
+            <td style="background-color: #e6bb67; border: 1px solid  #000;">Medium</td>
             <td>' . $horasMps . '</td>
             <td style="border: 1px solid #000;">' . ($diasMps / $totalTicketsMediumps) . '</td>
             <td>' . $totalTicketsMediumps . '</td>
@@ -2220,7 +2224,7 @@ echo "<H3><b>SPRINT ANTERIOR</b></H3>";
             <td style="border: 1px solid #000;">' . $Mscps . '</td>
         </tr>
         <tr style="border: 1px solid #000;">
-            <td style="border: 1px solid #000;">Low</td>
+            <td style="background-color: #e6bb67; border: 1px solid  #000;">Low</td>
             <td>' . $horasLps . '</td>
             <td style="border: 1px solid #000;">' . ($diasLps / $totalTicketsLowps) . '</td>
             <td>' . $totalTicketsLowps . '</td>
@@ -2235,7 +2239,7 @@ echo "<H3><b>SPRINT ANTERIOR</b></H3>";
             <td style="border: 1px solid #000;">' . $Lscps . '</td>
         </tr>
         <tr style="border: 1px solid #000;">
-            <td style="border: 1px solid #000;">Lowest</td>
+            <td style="background-color: #e6bb67; border: 1px solid  #000;">Lowest</td>
             <td>' . $horasSLps . '</td>
             <td style="border: 1px solid #000;">' . (($totalTicketsSuperLowps !== 0) ? ($diasSLps / $totalTicketsSuperLowps) : 0) . '</td>
 
@@ -2251,7 +2255,7 @@ echo "<H3><b>SPRINT ANTERIOR</b></H3>";
             <td style="border: 1px solid #000;">' . $SLscps . '</td>
         </tr>
         <tr style="border: 1px solid #000;">
-        <td style="border: 1px solid #000;"><h3>Total</h3></td>
+        <td style="background-color: #3e5cc6; border: 1px solid #000;"><h3>Total</h3></td>
         <td>' . $sumatoriahorasps . '</td>
         <td style="border: 1px solid #000;">' . ($sumatoriadiasps / $sumatoriaps) . '</td>
         <td><h3><b>' . $sumatoriaps . '</b></h3></td>
@@ -2274,7 +2278,7 @@ echo "<H3><b>SPRINT ANTERIOR</b></H3>";
 
 
     
-echo "<H3><b>CONSOLIDADO SPRINT ACTUAL / SPRINT ANTERIOR</b></H3>";
+echo "<H2>CONSOLIDADO SPRINT ACTUAL / SPRINT ANTERIOR</H2>";
 
 
 echo '<table style="background-color: #3b5ac6; color: #000; border-collapse: collapse; border: 1px solid #000;"  div class="container text-center">
@@ -2293,7 +2297,7 @@ echo '<table style="background-color: #3b5ac6; color: #000; border-collapse: col
 </tr>
 
     <tr style="border: 1px solid #000;">
-        <td style="border: 1px solid #000;">Highest</td>
+        <td style="background-color: #e6bb67; border: 1px solid  #000;">Highest</td>
         <td>' . ($horasSHPps+$horasSHP)/2.0 . '</td>
         <td style="border: 1px solid #000;">' .(($totalTicketsSuperHighps !== 0) ? (($totalTicketsSuperHigh !== 0) ? ((($diasSHP / $totalTicketsSuperHigh)+ ($diasSHPps / $totalTicketsSuperHighps))/2.0) : 0) : 0). '</td>
         <td>' . $totalTicketsSuperHighps +$totalTicketsSuperHigh. '</td>
@@ -2308,7 +2312,7 @@ echo '<table style="background-color: #3b5ac6; color: #000; border-collapse: col
     </tr>
 
     <tr style="border: 1px solid #000;">
-        <td style="border: 1px solid #000;">High</td>
+        <td style="background-color: #e6bb67; border: 1px solid  #000;">High</td>
         <td>' . ($horasHPps+$horasHP)/2.0 . '</td>
         <td style="border: 1px solid #000;">' .(($diasHP / $totalTicketsHigh)+ ($diasHPps / $totalTicketsHighps))/2.0 . '</td>
         <td>' . $totalTicketsHighps+$totalTicketsHigh . '</td>
@@ -2324,7 +2328,7 @@ echo '<table style="background-color: #3b5ac6; color: #000; border-collapse: col
     </tr>
 
     <tr style="border: 1px solid #000;">
-        <td style="border: 1px solid #000;">Medium</td>
+        <td style="background-color: #e6bb67; border: 1px solid  #000;">Medium</td>
         <td>' . ($horasMps+$horasM)/2.0 . '</td>
         <td style="border: 1px solid #000;">' .( ($diasM / $totalTicketsMedium)+ ($diasMps / $totalTicketsMediumps))/2.0 . '</td>
         <td>' . $totalTicketsMediumps+$totalTicketsMedium . '</td>
@@ -2339,7 +2343,7 @@ echo '<table style="background-color: #3b5ac6; color: #000; border-collapse: col
         <td style="border: 1px solid #000;">' . $Mscps+$Msc . '</td>
     </tr>
     <tr style="border: 1px solid #000;">
-        <td style="border: 1px solid #000;">Low</td>
+        <td style="background-color: #e6bb67; border: 1px solid  #000;">Low</td>
         <td>' . ($horasLps+$horasL)/2.0 . '</td>
         <td style="border: 1px solid #000;">' .( ($diasLps / $totalTicketsLowps)+ ($diasL / $totalTicketsLow))/2 . '</td>
         <td>' . $totalTicketsLowps+$totalTicketsLow . '</td>
@@ -2354,7 +2358,7 @@ echo '<table style="background-color: #3b5ac6; color: #000; border-collapse: col
         <td style="border: 1px solid #000;">' . $Lscps+$Lsc . '</td>
     </tr>
     <tr style="border: 1px solid #000;">
-        <td style="border: 1px solid #000;">Lowest</td>
+        <td style="background-color: #e6bb67; border: 1px solid  #000;">Lowest</td>
         <td>' . ($horasSLps+$horasSL)/2.0 . '</td>
         <td style="border: 1px solid #000;">' . (($totalTicketsSuperLowps !== 0) ?  (($diasSLps / $totalTicketsSuperLowps) + ($diasSL / $totalTicketsSuperLow))/2.0 : 0) . '</td>
         <td>' . $totalTicketsSuperLowps+$totalTicketsSuperLow . '</td>
@@ -2371,7 +2375,7 @@ echo '<table style="background-color: #3b5ac6; color: #000; border-collapse: col
 
 
     <tr style="border: 1px solid #000;">
-    <td style="border: 1px solid #000;"><h3>Total</h3></td>
+    <td style="background-color: #3e5cc6; border: 1px solid #000;"><h3>Total</h3></td>
     <td>' . $sumatoriahorasps+$sumatoriahoras . '</td>
     <td style="border: 1px solid #000;">' . (($sumatoriadiasps / $sumatoriaps) +($sumatoriadias / $sumatoria))/2.0 . '</td>
     <td><h3><b>' . $sumatoriaps+$sumatoria . '</b></h3></td>
@@ -2394,7 +2398,7 @@ echo '<table style="background-color: #3b5ac6; color: #000; border-collapse: col
 $totalResolvePS=$resolveSHCF+$resolveHCF+$resolveMCF+$resolveLCF+$resolveSLCF;
 $totalNResolve= $totalCurso+$totalWsupport+$totalWresponse+$totalChecking+$totalTesting+$totalSc;
 $totalNResolve2= $totalCursops+$totalWsupportps+$totalWresponseps+$totalCheckingps+$totalTestingps+$totalScps;
-echo "<H3><b>DEL SPRINT ANTERIOR</b></H3>";
+echo "<H2>DEL SPRINT ANTERIOR</H2>";
 
 
 echo '<table style="background-color: #3b5ac6; color: #000; border-collapse: collapse; border: 1px solid #000;"  div class="container text-center">
@@ -2409,7 +2413,7 @@ echo '<table style="background-color: #3b5ac6; color: #000; border-collapse: col
 </tr>
 
     <tr style="border: 1px solid #000;">
-        <td style="border: 1px solid #000;">Highest</td>
+        <td style="background-color: #e6bb67; border: 1px solid  #000;">Highest</td>
         <td>' . $resolveSHCF . '</td>
         <td style="border: 1px solid #000;">' .$SHresolve . '</td>
         <td>' . $resolveSHCF +$SHresolve. '</td>
@@ -2418,7 +2422,7 @@ echo '<table style="background-color: #3b5ac6; color: #000; border-collapse: col
     </tr>
 
     <tr style="border: 1px solid #000;">
-        <td style="border: 1px solid #000;">High</td>
+        <td style="background-color: #e6bb67; border: 1px solid  #000;">High</td>
         <td>' . $resolveHCF . '</td>
         <td style="border: 1px solid #000;">' .$Hresolve . '</td>
         <td>' . $resolveHCF +$Hresolve. '</td>
@@ -2427,7 +2431,7 @@ echo '<table style="background-color: #3b5ac6; color: #000; border-collapse: col
     </tr>
 
     <tr style="border: 1px solid #000;">
-        <td style="border: 1px solid #000;">Medium</td>
+        <td style="background-color: #e6bb67; border: 1px solid  #000;">Medium</td>
         <td>' . $resolveMCF . '</td>
         <td style="border: 1px solid #000;">' .$Mresolve . '</td>
         <td>' . $resolveMCF +$Mresolve. '</td>
@@ -2435,7 +2439,7 @@ echo '<table style="background-color: #3b5ac6; color: #000; border-collapse: col
         <td>' . $Mcursops +$Mwresponseps+$Mwsupportps+$Mcheckingps+$Mtestingps+$Mscps. '</td>
     </tr>
     <tr style="border: 1px solid #000;">
-        <td style="border: 1px solid #000;">Low</td>
+        <td style="background-color: #e6bb67; border: 1px solid  #000;">Low</td>
         <td>' . $resolveLCF . '</td>
         <td style="border: 1px solid #000;">' .$Lresolve . '</td>
         <td>' . $resolveLCF +$Lresolve. '</td>
@@ -2443,7 +2447,7 @@ echo '<table style="background-color: #3b5ac6; color: #000; border-collapse: col
         <td>' . $Lcursops +$Lwresponseps+$Lwsupportps+$Lcheckingps+$Ltestingps+$Lscps. '</td>
     </tr>
     <tr style="border: 1px solid #000;">
-        <td style="border: 1px solid #000;">Lowest</td>
+        <td style="background-color: #e6bb67; border: 1px solid  #000;">Lowest</td>
         <td>' . $resolveSLCF . '</td>
         <td style="border: 1px solid #000;">' .$SLresolve . '</td>
         <td>' . $resolveSLCF +$SLresolve. '</td>
@@ -2453,7 +2457,7 @@ echo '<table style="background-color: #3b5ac6; color: #000; border-collapse: col
 
 
     <tr style="border: 1px solid #000;">
-    <td style="border: 1px solid #000;"><h3>Total</h3></td>
+    <td style="background-color: #3e5cc6; border: 1px solid #000;"><h3>Total</h3></td>
     <td>' . $totalResolvePS . '</td>
     <td style="border: 1px solid #000;">' . $sumatoriaresolve . '</td>
     
@@ -3402,7 +3406,7 @@ if($estado=="Resuelta"){
     
     
            
-          echo "<H3><b>INICIO DE LOS TIEMPOS</b></H3>";
+          echo "<H2>INICIO DE LOS TIEMPOS</H2>";
     
     //grilla----
         echo '<table style="background-color: #3b5ac6; color: #000; border-collapse: collapse; border: 1px solid #000;" div class="container text-center">
@@ -3420,7 +3424,7 @@ if($estado=="Resuelta"){
         <th style="border: 1px solid #000;">Escalado</th>
     </tr>
             <tr style="border: 1px solid #000;">
-                <td style="border: 1px solid #000;">Highest</td>
+                <td style="background-color: #e6bb67; border: 1px solid  #000;">Highest</td>
                 <td>' . $horasSHP . '</td>
                 <td style="border: 1px solid #000;">' . ($diasSHP / $totalTicketsSuperHigh) . '</td>
                 <td>' . $totalTicketsSuperHigh . '</td>
@@ -3434,7 +3438,7 @@ if($estado=="Resuelta"){
                 <td style="border: 1px solid #000;">' . $SHsc . '</td>
             </tr>
             <tr style="border: 1px solid #000;">
-                <td style="border: 1px solid #000;">High</td>
+                <td style="background-color: #e6bb67; border: 1px solid  #000;">High</td>
                 <td>' . $horasHP . '</td>
                 <td style="border: 1px solid #000;">' . ($diasHP / $totalTicketsHigh) . '</td>
                 <td>' . $totalTicketsHigh . '</td>
@@ -3449,7 +3453,7 @@ if($estado=="Resuelta"){
                 <td style="border: 1px solid #000;">' . $Hsc . '</td>
             </tr>
             <tr style="border: 1px solid #000;">
-                <td style="border: 1px solid #000;">Medium</td>
+                <td style="background-color: #e6bb67; border: 1px solid  #000;">Medium</td>
                 <td>' . $horasM . '</td>
                 <td style="border: 1px solid #000;">' . ($diasM / $totalTicketsMedium) . '</td>
                 <td>' . $totalTicketsMedium . '</td>
@@ -3464,7 +3468,7 @@ if($estado=="Resuelta"){
                 <td style="border: 1px solid #000;">' . $Msc . '</td>
             </tr>
             <tr style="border: 1px solid #000;">
-                <td style="border: 1px solid #000;">Low</td>
+                <td style="background-color: #e6bb67; border: 1px solid  #000;">Low</td>
                 <td>' . $horasL . '</td>
                 <td style="border: 1px solid #000;">' . ($diasL / $totalTicketsLow) . '</td>
                 <td>' . $totalTicketsLow . '</td>
@@ -3479,7 +3483,7 @@ if($estado=="Resuelta"){
                 <td style="border: 1px solid #000;">' . $Lsc . '</td>
             </tr>
             <tr style="border: 1px solid #000;">
-                <td style="border: 1px solid #000;">Lowest</td>
+                <td style="background-color: #e6bb67; border: 1px solid  #000;">Lowest</td>
                 <td>' . $horasSL . '</td>
                 <td style="border: 1px solid #000;">' . (($totalTicketsSuperLow !== 0) ? ($diasSL / $totalTicketsSuperLow) : 0) . '</td>
     
@@ -3495,7 +3499,7 @@ if($estado=="Resuelta"){
                 <td style="border: 1px solid #000;">' . $SLsc . '</td>
             </tr>
             <tr style="border: 1px solid #000;">
-            <td style="border: 1px solid #000;"><h3>Total</h3></td>
+            <td style="background-color: #3e5cc6; border: 1px solid #000;""><h3>Total</h3></td>
             <td>' . $sumatoriahoras . '</td>
             <td style="border: 1px solid #000;">' . ($sumatoriadias / $sumatoria) . '</td>
             <td><h3><b>' . $sumatoria . '</b></h3></td>
@@ -4470,7 +4474,7 @@ if($estado=="Resuelta"){
     
     
            
-          echo "<H3><b>INICIO DE LOS TIEMPOS CON FILTRO</b></H3>";
+          echo "<H2>INICIO DE LOS TIEMPOS CON FILTRO</H2>";
     
     //grilla----
         echo '<table style="background-color: #3b5ac6; color: #000; border-collapse: collapse; border: 1px solid #000;" div class="container text-center">
@@ -4488,7 +4492,7 @@ if($estado=="Resuelta"){
         <th style="border: 1px solid #000;">Escalado</th>
     </tr>
             <tr style="border: 1px solid #000;">
-                <td style="border: 1px solid #000;">Highest</td>
+                <td style="background-color: #e6bb67; border: 1px solid  #000;">Highest</td>
                 <td>' . $horasSHP . '</td>
                 <td style="border: 1px solid #000;">' . ($diasSHP / $totalTicketsSuperHigh) . '</td>
                 <td>' . $totalTicketsSuperHigh . '</td>
@@ -4502,7 +4506,7 @@ if($estado=="Resuelta"){
                 <td style="border: 1px solid #000;">' . $SHsc . '</td>
             </tr>
             <tr style="border: 1px solid #000;">
-                <td style="border: 1px solid #000;">High</td>
+                <td style="background-color: #e6bb67; border: 1px solid  #000;">High</td>
                 <td>' . $horasHP . '</td>
                 <td style="border: 1px solid #000;">' . ($diasHP / $totalTicketsHigh) . '</td>
                 <td>' . $totalTicketsHigh . '</td>
@@ -4517,7 +4521,7 @@ if($estado=="Resuelta"){
                 <td style="border: 1px solid #000;">' . $Hsc . '</td>
             </tr>
             <tr style="border: 1px solid #000;">
-                <td style="border: 1px solid #000;">Medium</td>
+                <td style="background-color: #e6bb67; border: 1px solid  #000;">Medium</td>
                 <td>' . $horasM . '</td>
                 <td style="border: 1px solid #000;">' . ($diasM / $totalTicketsMedium) . '</td>
                 <td>' . $totalTicketsMedium . '</td>
@@ -4532,7 +4536,7 @@ if($estado=="Resuelta"){
                 <td style="border: 1px solid #000;">' . $Msc . '</td>
             </tr>
             <tr style="border: 1px solid #000;">
-                <td style="border: 1px solid #000;">Low</td>
+                <td style="background-color: #e6bb67; border: 1px solid  #000;">Low</td>
                 <td>' . $horasL . '</td>
                 <td style="border: 1px solid #000;">' . ($diasL / $totalTicketsLow) . '</td>
                 <td>' . $totalTicketsLow . '</td>
@@ -4547,7 +4551,7 @@ if($estado=="Resuelta"){
                 <td style="border: 1px solid #000;">' . $Lsc . '</td>
             </tr>
             <tr style="border: 1px solid #000;">
-                <td style="border: 1px solid #000;">Lowest</td>
+                <td style="background-color: #e6bb67; border: 1px solid  #000;">Lowest</td>
                 <td>' . $horasSL . '</td>
                 <td style="border: 1px solid #000;">' . (($totalTicketsSuperLow !== 0) ? ($diasSL / $totalTicketsSuperLow) : 0) . '</td>
     
@@ -4563,7 +4567,7 @@ if($estado=="Resuelta"){
                 <td style="border: 1px solid #000;">' . $SLsc . '</td>
             </tr>
             <tr style="border: 1px solid #000;">
-            <td style="border: 1px solid #000;"><h3>Total</h3></td>
+            <td style="background-color: #3e5cc6; border: 1px solid #000;"><h3>Total</h3></td>
             <td>' . $sumatoriahoras . '</td>
             <td style="border: 1px solid #000;">' . ($sumatoriadias / $sumatoria) . '</td>
             <td><h3><b>' . $sumatoria . '</b></h3></td>
@@ -4586,4 +4590,3 @@ if($estado=="Resuelta"){
     }
 }
 ?>
-
