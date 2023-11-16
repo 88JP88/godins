@@ -2196,7 +2196,7 @@ echo "<H2>SPRINT ANTERIOR</H2>";
         <tr style="border: 1px solid #000;">
             <td style="background-color: #e6bb67; border: 1px solid  #000;">High</td>
             <td>' . $horasHPps . '</td>
-            <td style="border: 1px solid #000;">' . ($diasHPps / $totalTicketsHighps) . '</td>
+            <td style="border: 1px solid #000;">' .(($totalTicketsHighps !== 0) ? ($diasHPps / $totalTicketsHighps) : 0)  . '</td>
             <td>' . $totalTicketsHighps . '</td>
             <td style="border: 1px solid #000;"><b>' . $Hresolveps . '</b> -> (' . $porcentajetotalHps . '%)</td>
           
@@ -2211,7 +2211,7 @@ echo "<H2>SPRINT ANTERIOR</H2>";
         <tr style="border: 1px solid #000;">
             <td style="background-color: #e6bb67; border: 1px solid  #000;">Medium</td>
             <td>' . $horasMps . '</td>
-            <td style="border: 1px solid #000;">' . ($diasMps / $totalTicketsMediumps) . '</td>
+            <td style="border: 1px solid #000;">' . (($totalTicketsMediumps !== 0) ? ($diasMps / $totalTicketsMediumps) : 0)   . '</td>
             <td>' . $totalTicketsMediumps . '</td>
             <td style="border: 1px solid #000;"><b>' . $Mresolveps . '</b> -> (' . $porcentajetotalMps . '%)</td>
             
@@ -2226,7 +2226,7 @@ echo "<H2>SPRINT ANTERIOR</H2>";
         <tr style="border: 1px solid #000;">
             <td style="background-color: #e6bb67; border: 1px solid  #000;">Low</td>
             <td>' . $horasLps . '</td>
-            <td style="border: 1px solid #000;">' . ($diasLps / $totalTicketsLowps) . '</td>
+            <td style="border: 1px solid #000;">' .(($totalTicketsLowps !== 0) ?  ($diasLps / $totalTicketsLowps) : 0) . '</td>
             <td>' . $totalTicketsLowps . '</td>
             <td style="border: 1px solid #000;"><b>' . $Lresolveps . '</b> -> (' . $porcentajetotalLps . '%)</td>
             
@@ -2257,7 +2257,7 @@ echo "<H2>SPRINT ANTERIOR</H2>";
         <tr style="border: 1px solid #000;">
         <td style="background-color: #3e5cc6; border: 1px solid #000;"><h3>Total</h3></td>
         <td>' . $sumatoriahorasps . '</td>
-        <td style="border: 1px solid #000;">' . ($sumatoriadiasps / $sumatoriaps) . '</td>
+        <td style="border: 1px solid #000;">' . (($sumatoriaps !== 0) ? ($sumatoriadiasps / $sumatoriaps)  : 0). '</td>
         <td><h3><b>' . $sumatoriaps . '</b></h3></td>
         <td style="border: 1px solid #000;"><b>' . $sumatoriaresolveps . '</b> -> (' . $porcentajetotalps . '%)</td>
      
@@ -2314,7 +2314,7 @@ echo '<table style="background-color: #3b5ac6; color: #000; border-collapse: col
     <tr style="border: 1px solid #000;">
         <td style="background-color: #e6bb67; border: 1px solid  #000;">High</td>
         <td>' . ($horasHPps+$horasHP)/2.0 . '</td>
-        <td style="border: 1px solid #000;">' .(($diasHP / $totalTicketsHigh)+ ($diasHPps / $totalTicketsHighps))/2.0 . '</td>
+        <td style="border: 1px solid #000;">' . (($totalTicketsHighps !== 0) ? (($totalTicketsHigh !== 0) ? ((($diasHP / $totalTicketsHigh)+ ($diasHPps / $totalTicketsHighps))/2.0) : 0): 0) . '</td>
         <td>' . $totalTicketsHighps+$totalTicketsHigh . '</td>
         <td style="border: 1px solid #000;"><b>' . $Hresolveps+$Hresolve . '</b> -> (' . ($porcentajetotalHps+$porcentajetotalH)/2.0 . '%)</td>
       
@@ -2330,7 +2330,7 @@ echo '<table style="background-color: #3b5ac6; color: #000; border-collapse: col
     <tr style="border: 1px solid #000;">
         <td style="background-color: #e6bb67; border: 1px solid  #000;">Medium</td>
         <td>' . ($horasMps+$horasM)/2.0 . '</td>
-        <td style="border: 1px solid #000;">' .( ($diasM / $totalTicketsMedium)+ ($diasMps / $totalTicketsMediumps))/2.0 . '</td>
+        <td style="border: 1px solid #000;">' .  (($totalTicketsMediumps !== 0) ? (($totalTicketsMedium !== 0) ? ((($diasM / $totalTicketsMedium)+ ($diasMps / $totalTicketsMediumps))/2.0 ) : 0): 0) . '</td>
         <td>' . $totalTicketsMediumps+$totalTicketsMedium . '</td>
         <td style="border: 1px solid #000;"><b>' . $Mresolveps+$Mresolve . '</b> -> (' . ($porcentajetotalMps+$porcentajetotalM)/2.0 . '%)</td>
         
@@ -2345,7 +2345,7 @@ echo '<table style="background-color: #3b5ac6; color: #000; border-collapse: col
     <tr style="border: 1px solid #000;">
         <td style="background-color: #e6bb67; border: 1px solid  #000;">Low</td>
         <td>' . ($horasLps+$horasL)/2.0 . '</td>
-        <td style="border: 1px solid #000;">' .( ($diasLps / $totalTicketsLowps)+ ($diasL / $totalTicketsLow))/2 . '</td>
+        <td style="border: 1px solid #000;">' . (($totalTicketsLowps !== 0) ? (($totalTicketsLow !== 0) ? ((($diasLps / $totalTicketsLowps)+ ($diasL / $totalTicketsLow))/2.0 ) : 0): 0) . '</td>
         <td>' . $totalTicketsLowps+$totalTicketsLow . '</td>
         <td style="border: 1px solid #000;"><b>' . $Lresolveps+$Lresolve . '</b> -> (' . ($porcentajetotalLps+$porcentajetotalL)/2.0 . '%)</td>
         
@@ -2377,7 +2377,7 @@ echo '<table style="background-color: #3b5ac6; color: #000; border-collapse: col
     <tr style="border: 1px solid #000;">
     <td style="background-color: #3e5cc6; border: 1px solid #000;"><h3>Total</h3></td>
     <td>' . $sumatoriahorasps+$sumatoriahoras . '</td>
-    <td style="border: 1px solid #000;">' . (($sumatoriadiasps / $sumatoriaps) +($sumatoriadias / $sumatoria))/2.0 . '</td>
+    <td style="border: 1px solid #000;">' . (($sumatoriaresolveps !== 0) ? (($sumatoriaresolve !== 0) ? ((($sumatoriadiasps / $sumatoriaps) +($sumatoriadias / $sumatoria))/2.0  ) : 0): 0). '</td>
     <td><h3><b>' . $sumatoriaps+$sumatoria . '</b></h3></td>
     <td style="border: 1px solid #000;"><b>' . $sumatoriaresolveps+$sumatoriaresolve . '</b> -> (' . ($porcentajetotalps+$porcentajetotal)/2.0 . '%)</td>
  
