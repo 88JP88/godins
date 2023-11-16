@@ -65,14 +65,16 @@
   </div>
   <!--<input type="file" name="csv_file" accept=".csv" required>-->
   </div>
-  <div class="col-md-6">
+
+    <div class="col-md-8">
     <label>Fecha inicio:</label>
     <input type="datetime-local" name="fechaInicio" required>
     <label>Fecha final:</label>
     <input type="datetime-local" name="fechaFinal" required>
+    <label>Fecha final:</label>
+    <input type="datetime-local" name="fechaInicioS" required>
+    </div>
 
-    
-  </div>
   <div class="col-12">
   
   </div>
