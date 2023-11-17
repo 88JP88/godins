@@ -2002,7 +2002,7 @@ $resolveSLCF=0;
     
 
 
-       
+        
       echo "<H2>SPRINT ACTUAL</H2>";
 
 //grilla----
